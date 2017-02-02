@@ -1,57 +1,18 @@
-#include <iostream>
-using namespace std;
-  
-// Main program
-main()
+#include "Calculator.h"
+
+double Calculator::Calculate(double x, char op, double y)
 {
-    cout << "calculator\n";
-
-    char op; // operator: +, -, *, /
-    float num1, num2; // inputs
-    float res; // result
-  
-    cout << "Enter the first number:";
-    cin >> num1;
-
-    cout << "Enter an operator (+ - * /):";
-    cin >> op;
-
-    cout << "Enter the second number:";
-    cin >> num2;
-  
-    // Switch statement begins
-    switch (op) {
-          
-        // op + 
+    switch(op)
+    {
         case '+':
-            res = num1 + num2;
-            break;
-          
-        // op - 
+            return x + y;
         case '-':
-            res =  num1 - num2;
-            break;
-          
-        // op *
+            return x - y;
         case '*':
-            res =  num1 * num2;
-            break;
-          
-        // op /
+            return x * y;
         case '/':
-            res =  num1 / num2;
-            break;
-          
-        // error: operator is not in the current list: +, - , *, / 
+            return x / y;
         default:
-            cout << "Error! operator is not correct";
-            break;
-    } // switch statement ends
-
-    if (res) {
-        cout << "The result is:";
-        cout << res;
+            return 0.0;
     }
-  
-    return 0; 
 }

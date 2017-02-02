@@ -1,5 +1,10 @@
 to compile this program:
-`g++ -o calculator calculator.cpp`
+`g++ -c -o calculator.o Calculator.cpp `
+
+`g++ -c -o main.o main.cpp `
+
+link them together
+`g++ -o calc main.o calculator.o -lm`
 
 to execute the program:
-`./calculator`
+`./calc`
