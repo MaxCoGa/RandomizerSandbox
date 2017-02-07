@@ -1,6 +1,8 @@
 #include <string>
 #include <iostream>
 
+//#include "Character.h"
+
 using namespace std;
 
 class Character
@@ -10,16 +12,14 @@ private:
     // data hidden from outside world
     int id;
     // Access specifier
-    
+
+    string name;
+
     double lvl;
     double hitpoints;
     double money;
 
 public:
-    // Data Members
-    string name;
-    //int id;
-
     // Default Constructor
     Character()
     {
@@ -28,10 +28,10 @@ public:
     }
 
     // Parameterized Constructor
-    Character(string s, int x)
+    Character(string s)
     {
         name = s;
-        id = x;
+        id = 1;
 
         lvl = 1;
         hitpoints = 100;
@@ -41,16 +41,12 @@ public:
     // Definition for Destructor
     ~Character()
     {
-        //cout << "Destructor called for id: " << id << endl;
+        // cout << "Destructor called for id: " << id << endl;
     } // when program is done destructor is called
 
-
-
-
-    //print
+    // print
     void printname();
     void printid();
-
 
     // ID set/get
     void setId(int a)
@@ -71,6 +67,40 @@ public:
     {
         return name;
     }
+
+    // money
+    void setMoney(double m)
+    {
+        money = m;
+    }
+    double getMoney()
+    {
+        return money;
+    }
+
+    // level
+    void setlvl(double l)
+    {
+        lvl = l;
+    }
+    double getlvl()
+    {
+        return lvl;
+    }
+    int getIntlvl()
+    {
+        return (int)lvl;
+    }
+
+    // hitpoints
+    void setHP(double hp)
+    {
+        hitpoints = hp;
+    }
+    double getHP()
+    {
+        return hitpoints;
+    }
 };
 
 // Definition of printname using scope resolution operator ::
@@ -85,24 +115,26 @@ void Character::printid()
 }
 
 ///////////////////////////////////////////////////////////////
-int main()
-{
 
-    // Declare an object of class Character Default
-    Character obj1("Test",1);
+// Only use to test this class
+// int main()
+// {
 
-    // accessing data member
-    // obj1.name = "Max";
-    // obj1.id=37;
+//     // Declare an object of class Character Default
+//     Character obj1("Test",1);
 
-    // call printname()
-    obj1.printname();
-    cout << endl;
-    // accessing member function
-    obj1.printid();
-    cout << endl;
-    obj1.setId(2);
-    cout << obj1.getId() << endl;
+//     // accessing data member
+//     // obj1.name = "Max";
+//     // obj1.id=37;
 
-    return 0;
-}
+//     // call printname()
+//     obj1.printname();
+//     cout << endl;
+//     // accessing member function
+//     obj1.printid();
+//     cout << endl;
+//     obj1.setId(2);
+//     cout << obj1.getId() << endl;
+
+//     return 0;
+// }
